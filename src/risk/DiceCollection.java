@@ -1,6 +1,7 @@
 package risk;
 
 import java.util.ArrayList;
+import java.util.StringJoiner;
 
 /**
  * @author fessermn
@@ -14,11 +15,11 @@ public class DiceCollection extends ArrayList<Integer> {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("(");
+        final StringJoiner sj = new StringJoiner(", ");
         for (final Integer i : this) {
-            sb.append(i + " ");
+            sj.add(Integer.toString(i));
         }
-        sb.append(")");
-        return sb.toString();
+
+        return "(" + sj.toString() + ")";
     }
 }
